@@ -1,0 +1,21 @@
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.button {
+    text-decoration: ita;
+    padding: 10px 20px;
+    background-color: rgb(58, 176, 211); /* 藍色背景 */
+    color: white; /* 文字顏色 */
+    border-radius: 5px; /* 圓角 */
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s; /* 加入過渡效果 */
+}
+
+.button:hover {
+    background-color: #fcfcfc; /* 滑鼠懸停時改為深灰色 */
+    color: rgb(179, 215, 245);
+}

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.72.0">
+    <title>馬玉錚的部落格</title>
+
+    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/blog/">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="ranking.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style>
+        /* stylelint-disable selector-list-comma-newline-after */
+
+        .blog-header {
+            line-height: 1;
+            border-bottom: 1px solid #727272;
+        }
+
+        .blog-header-logo {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: 32px;
+        }
+
+        .blog-header-logo:hover {
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        }
+
+        .display-4 {
+            font-size: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .display-4 {
+                font-size: 3rem;
+            }
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-scroller .nav-link {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            font-size: .875rem;
+        }
+
+        .card-img-right {
+            height: 100%;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .flex-auto {
+            flex: 0 0 auto;
+        }
+
+        .h-250 {
+            height: 250px;
+        }
+
+        @media (min-width: 768px) {
+            .h-md-250 {
+                height: 250px;
+            }
+        }
+
+        /* Pagination */
+        .blog-pagination {
+            margin-bottom: 4rem;
+        }
+
+        .blog-pagination>.btn {
+            border-radius: 2rem;
+        }
+
+        /*
+        * Blog posts
+        */
+        .blog-post {
+            margin-bottom: 4rem;
+        }
+
+        .blog-post-title {
+            margin-bottom: .25rem;
+            font-size: 2.5rem;
+        }
+
+        .blog-post-meta {
+            margin-bottom: 1.25rem;
+            color: #727272;
+        }
+
+        /*
+        * Footer
+        */
+        .blog-footer {
+            padding: 2.5rem 0;
+            color: #52c2d0;
+            text-align: center;
+            background-color: rgb(58, 176, 211);
+            border-top: .05rem solid #e5e5e5;
+        }
+
+        .blog-footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-footer p:last-child {
+            margin-bottom: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <img src="logo.png" width="300" heigh="40">
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-dark" href="home.html">YuZheng's Blog</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+                            viewBox="0 0 24 24">
+                            <title>Search</title>
+                            <circle cx="10.5" cy="10.5" r="7.5" />
+                            <path d="M21 21l-5.2-5.2" />
+                        </svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="button-container">
+            <a class="button" href="about_me.html">關於我</a>
+            <a class="button" href="awards.html">得獎經歷</a>
+            <a class="button" href="#">數據分析</a>
+            <a class="button" href="#">AI人工智慧</a>
+            <a class="button" href="#">商業分析</a>
+            <a class="button" href="#">日記</a>
+        </div>
+
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="content-box" id="box1">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h1>得獎經歷</h1>Sweet Potato是根還是莖?
+                    <br>答案是: 根
+                </p>
+            <style>
+                p{
+                    font-style: italic;
+                }
+            </style>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="content-box" id="box2">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">關於我</strong>
+                            <h3 class="mb-0">第一篇文章</h3>
+                            <div class="mb-1 text-muted">Feb 12, 2025</div>
+                            <p class="card-text mb-auto">關於我的事情</p>
+                            <a href="about_me.html" class="stretched-link">繼續閱讀</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="content-box" id="box2">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">得獎經歷</strong>
+                            <h3 class="mb-0">得獎經歷</h3>
+                            <div class="mb-1 text-muted">Feb 12, 2025</div>
+                            <p class="mb-auto">這是我歷年來的得獎經歷</p>
+                            <a href="awards.html" class="stretched-link">繼續閱讀</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">得獎經歷</h2>
+                    <p class="blog-post-meta">February 13, 2025 by <a href="about_me.html">Zheng</a></p>
+
+                    <p>這裡主要收集我在圍棋的一些重要里程碑，希望未來有我在數據分析領域的獎項~~</p>
+                    <h2>圍棋</h2>
+                    <ul>
+                        <li>2016業餘戰神排行榜Top50、入選業餘戰神名人堂</li>
+                        <li><span class="date">2023-02-27:</span> 2023小佛聖盃圍棋團隊賽 <span class="ranking">冠軍</span></li>
+                        <li><span class="date">2020-10-31:</span> 第15屆榮三盃全國學生棋王賽 <span class="ranking">第九名</span></li>
+                        <li><span class="date">2020-06-21:</span> 民國109年大森盃圍棋公開賽 <span class="ranking">亞軍</span></li>
+                        <li><span class="date">2018-12-07:</span> 臺北市107學年度中小學教師畫 <span class="ranking">第八名</span></li>
+                        <li><span class="date">2017-07-09:</span> 臺北市107學年度中小學教育盃 <span class="ranking">第十名</span></li>
+                        <li><span class="date">2016-02-21:</span> 2016【南山盃】第10屆青少年圍棋公開賽B <span class="ranking">第十名</span></li>
+                        <li><span class="date">2015-12-11:</span> 臺北市104學年度中小學教育盃圍棋錦標賽 <span class="ranking">冠軍</span></li>
+                        <li><span class="date">2015-12-06:</span> 第二屆「大成杯」全國業餘圍棋棋聖賽 <span class="ranking">第十名</span></li>
+                        <li><span class="date">2015-11-08:</span> 2015年新北市【狀元盃】全國圍棋公開賽 <span class="ranking">季軍</span></li>
+                        <li><span class="date">2015-10-25:</span> 2015年樂活盃全國圍棋公開賽 <span class="ranking">殿軍</span></li>
+                        <li><span class="date">2015-09-20:</span> 2015年樹林體育盃圍棋公開賽 <span class="ranking">第八名</span></li>
+                        <li><span class="date">2015-08-16:</span> 鈺德盃業餘棋王爭霸賽 <span class="ranking">亞軍</span></li>
+                        <li><span class="date">2015-07-05:</span> 2015年新北市【棋王盃】全國圍棋公開賽 <span class="ranking">殿軍</span></li>
+                        <li><span class="date">2015-05-24:</span> 鈺德盃業餘棋王爭霸賽 <span class="ranking">殿軍</span></li>
+                        <li><span class="date">2015-04-12:</span> 104年臺北市青年盃圍棋錦標賽 <span class="ranking">第九名</span></li>
+                        <li><span class="date">2013-10-31:</span> 第8屆榮三盃全國學生棋王賽 <span class="ranking">第十名</span></li>
+                        <li>中華民國圍棋協會、中國圍棋協會七段</li>
+                    </ul>
+
+                </div><!-- /.blog-post -->
+
+                <nav class="blog-pagination">
+                    <a class="btn btn-outline-primary" href="#">Older</a>
+                    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+                </nav>
+
+            </div>
+
+            <aside class="col-md-4">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="font-italic">About</h4>
+                    <p class="mb-0">師大附中畢、交大資工畢，目前等待考研結果.......</p>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="font-italic">Archives</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">數據分析</a></li>
+                        <li><a href="#">AI</a></li>
+                        <li><a href="#">前端</a></li>
+                        <li><a href="#">資料科學</a></li>
+                        <li><a href="#">商業分析</a></li>
+                        <li><a href="#">日記文</a></li>
+                    </ol>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="font-italic">聯絡我</h4>
+                    <ol class="list-unstyled">
+                        <li><img src="ins_logo.jpg" width="30"; height="30"><a href="https://www.instagram.com/yuzheng_0418/">Instagram</a></li>
+                        <li><img src="FB_logo.jpg" width="30"; height="30"><a href="https://www.facebook.com/lugman.ma/">Facebook</a></li>
+                        <li><img src="github.png" width="30"; height="30"><a href="https://github.com/yuzheng91">github</a></li>
+                    </ol>
+                </div>
+            </aside>
+
+        </div><!-- /.row -->
+
+    </main><!-- /.container -->
+
+    <footer class="blog-footer">
+        <p><a style="color:black;">@2025- All Right Reserved. YuZheng Ma </a></p>
+        <p>
+            <a href="awards.html"style="color:black;">Back to top</a>
+        </p>
+    </footer>
+
+
+
+</body>
+
+</html>

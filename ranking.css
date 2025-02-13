@@ -1,0 +1,10 @@
+/* 把所有名次部分靠右 */
+.ranking {
+    float: right;
+    margin-left: 10px; /* 讓名次和其他文字稍微有間距 */
+}
+
+/* 讓日期部分也對齊 */
+.date {
+    margin-right: 10px; /* 讓日期部分和其他文字有適當的間距 */
+}

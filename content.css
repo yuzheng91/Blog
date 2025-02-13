@@ -1,0 +1,40 @@
+.content-box {
+    background-size: cover; /* 背景圖片自動覆蓋區域 */
+    background-position: center; /* 背景圖片居中顯示 */
+    width: 100%; 
+    color: black; /* 文字顏色 */
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* 設定平滑的過渡效果 */
+    object-fit:cover;
+}
+
+.content-box h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.content-box p {
+    font-size: 1.2em;
+}
+
+.content-box .read-more {
+    font-size: 1.2em;
+    color: white;
+    text-decoration: underline;
+}
+
+.content-box:hover {
+    transform: scale(1.05); /* 當滑鼠懸停時，圖片和區塊放大 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 加入陰影效果 */
+}
+
+#box1{
+    background-image: url(ocean.jpg);
+    height: 50;
+}
+
+#box2{
+    background-image: url(101.jpg);
+    height: 500px; /* 設置區塊的高度 */
+}

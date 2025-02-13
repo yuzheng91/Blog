@@ -1,0 +1,31 @@
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('ocean.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 1s ease-in-out 3s forwards; /* 動畫時間4秒，結束後觸發fadeOut */
+    z-index: 9999;
+  }
+  
+  .welcome-text {
+    font-size: 48px;
+    color: white;
+    animation: fadeIn 1s ease-in-out; /* 文字淡入動畫 */
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+
+  
