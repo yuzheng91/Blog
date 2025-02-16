@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.72.0">
+    <title>馬玉錚的部落格</title>
+
+    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/blog/">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="ranking.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style>
+        /* stylelint-disable selector-list-comma-newline-after */
+
+        .blog-header {
+            line-height: 1;
+            border-bottom: 1px solid #727272;
+        }
+
+        .blog-header-logo {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: 32px;
+        }
+
+        .blog-header-logo:hover {
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        }
+
+        .display-4 {
+            font-size: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .display-4 {
+                font-size: 3rem;
+            }
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-scroller .nav-link {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            font-size: .875rem;
+        }
+
+        .card-img-right {
+            height: 100%;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .flex-auto {
+            flex: 0 0 auto;
+        }
+
+        .h-250 {
+            height: 250px;
+        }
+
+        @media (min-width: 768px) {
+            .h-md-250 {
+                height: 250px;
+            }
+        }
+
+        /* Pagination */
+        .blog-pagination {
+            margin-bottom: 4rem;
+        }
+
+        .blog-pagination>.btn {
+            border-radius: 2rem;
+        }
+
+        /*
+        * Blog posts
+        */
+        .blog-post {
+            margin-bottom: 4rem;
+        }
+
+        .blog-post-title {
+            margin-bottom: .25rem;
+            font-size: 2.5rem;
+        }
+
+        .blog-post-meta {
+            margin-bottom: 1.25rem;
+            color: #727272;
+        }
+
+        /*
+        * Footer
+        */
+        .blog-footer {
+            padding: 2.5rem 0;
+            color: #52c2d0;
+            text-align: center;
+            background-color: rgb(58, 176, 211);
+            border-top: .05rem solid #e5e5e5;
+        }
+
+        .blog-footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-footer p:last-child {
+            margin-bottom: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <img src="logo.png" width="300" heigh="40">
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-dark" href="home.html">YuZheng's Blog</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+                            viewBox="0 0 24 24">
+                            <title>Search</title>
+                            <circle cx="10.5" cy="10.5" r="7.5" />
+                            <path d="M21 21l-5.2-5.2" />
+                        </svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="button-container">
+            <a class="button" href="about_me.html">關於我</a>
+            <a class="button" href="awards.html">得獎經歷</a>
+            <a class="button" href="#">數據分析</a>
+            <a class="button" href="AI.html">AI人工智慧</a>
+            <a class="button" href="#">商業分析</a>
+            <a class="button" href="#">日記</a>
+        </div>
+
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="content-box" id="box1">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h1>AI人工智慧</h1>烤的Sweet Potato皮究竟能不能吃?
+                    <br>答案是: 可以吃!
+                </p>
+            <style>
+                p{
+                    font-style: italic;
+                }
+            </style>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="content-box" id="box2">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">關於我</strong>
+                            <h3 class="mb-0">第一篇文章</h3>
+                            <div class="mb-1 text-muted">Feb 12, 2025</div>
+                            <p class="card-text mb-auto">關於我的事情</p>
+                            <a href="about_me.html" class="stretched-link">繼續閱讀</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="content-box" id="box2">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">得獎經歷</strong>
+                            <h3 class="mb-0">得獎經歷</h3>
+                            <div class="mb-1 text-muted">Feb 12, 2025</div>
+                            <p class="mb-auto">這是我歷年來的得獎經歷</p>
+                            <a href="awards.html" class="stretched-link">繼續閱讀</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">台大教授李宏毅老師[機器學習概論2021][機器學習基本概念]</h2>
+                    <p class="blog-post-meta">February 16, 2025 by <a href="about_me.html">Zheng</a></p>
+                        <!-- 簡介段落 -->
+                        <section>
+                            <h2>📘 文章探討</h2>
+                            <p>
+                            1️⃣機器學習是甚麼?<br>
+                            2️⃣有哪些機器學習類型?<br>
+                            3️⃣怎麼找出與現實相近的預測?定義相關Loss Function與Optimization<br>
+                            4️⃣甚麼是Piecewise Linear Model以及Sigmoid、ReLU Function<br>
+                            5️⃣Deep(Hidden Layer)
+                            6️⃣Reference
+                            </p>
+                        </section>
+                    
+                        <!-- 主要內容段落 -->
+                        <section>
+                            <h2>1️⃣ 機器學習是甚麼?</h2>
+                            <p>
+                                用非常白話文的方式就是去找尋一個function，使得每次輸入一個input就會輸出一段預測結果。
+                                <img src="image/1.png", width="500", height="400">
+                            </p>
+                            <h2>2️⃣有哪些機器學習類型?</h2>
+                            <p>
+                                1. Reggression: 輸出一個<strong>數值</strong><br>
+                                2. Classification: 輸出一個<strong>類別</strong><br>
+                                <img src="image/2.png", width="500", height="400"><br>
+                                現在最熱門的就是<strong>Structured Learning</strong>，協助生成有結構的產物，
+                                比方說圖片或文件，前陣子ChatGPT上線的Sora就是一個例子。
+                            </p>
+                            <h2> 3️⃣怎麼找出與現實相近的預測?<br>定義相關Loss Function與Optimization</h2>
+                                <img src="image/3.png", width="500", height="400"><br>
+                                Loss Function就是帶有一堆參數的function，也稱為所謂的Model。
+                                <br>要如何評估這個模型是不是一個好的模型，就是去看這個帶有許多參數的function
+                                在輸入input之後，Loss值的大小，如果這個Loss的絕對值越小，則模型表現越好，也就
+                                是能有越好的預測。
+                                <br><img src="image/4.png", width="500", height="200"><br>
+                                有很多評估loss的方法，先計算每個資料的error，可以用MAE、MSE等等，然後把這些error加總，
+                                再做平均，即可得出這個模型對於這些資料所得到的Loss總和有多少。
+                                <br><img src="image/6.png", width="500", height="350"><br>
+                                投影片中說明的是如何不斷更新模型(Loss Function)的參數，每一次當我們算出現在這個
+                                Loss Function的Loss時，就會想要持續找出Loss最小的地方，更新weight也就是更新function的參數。
+                                更新方式是找出這個點的切線斜率，若是切線斜率很大，則一次可以跨大一點的步伐(learning rate調大)。
+                                並且若切線斜率小於0，則增加weight，若切線斜率大於0，則減少weight，直到到達local minimum。
+                            <h2>
+                                4️⃣甚麼是Piecewise Linear Model以及Sigmoid、ReLU Function
+                            </h2>    
+                                <br><img src="image/7.png", width="500", height="400"><br>
+                                簡單的linear model很難應付許多的資料分布，也沒辦法很好的闡釋出這些資料之間的關係，
+                                進而推得很好的預測。因此，這張圖說明我們可以利用很多的funciton，比方說圖片中的sigmoid function and constant function，
+                                去拼湊出一個比較好的模型結構。這種用拼湊的模型就是Piecewise Linear Model。
+                                <br><img src="image/8.png", width="500", height="300"><br>
+                                Sigmoid function也是一種activation function，主要是於神經網路中的非線性變換。
+                                他有幾個函數特性，
+                                <ul>
+                                    <li>
+                                        輸出範圍在(0,1)，使得它非常適合處理需要將輸出改為機率的問題。
+                                    </li>
+                                    <li>
+                                        當x值很大時，輸出值會無限趨近於1，而當x很小時，輸出會趨近於0，
+                                        也就是輸入極大或極小時，都會趨於定值。
+                                    </li>
+                                    <li>
+                                        Sigmoid function平滑且可微，這是神經網路中backpropagation所需要的特性。
+                                    </li>
+                                </ul>
+                                Sigmoid函數的用途為:
+                                <ul>
+                                    <li>
+                                        二非類問題
+                                    </li>
+                                    <li>
+                                        在logistic regression中，Sigmoid function用於將linear regression映射成機率。
+                                    </li>
+                                </ul>
+                                優點就是它能有效地學習輸入特徵之間的非線性關係，原因是在Sigmoid function中心區域的輸出是平滑的。
+                                <br><img src="image/9.png", width="500", height="300"><br>
+                                Gradient就是一個向量，裡面存放input的每個參數&theta;對Loss function的微分。然後把現在的gradient&theta;<sub>0</sub>減去&eta;*第二次的gradient&theta;<sub>1</sub>，可得更新過的&theta;<sub>1</sub>。
+                                持續計算直到不想做或是grandient為零向量，沒有辦法更新weight為止。但是現實生活中不太可能會出現gradient為零向量的情況發生。   
+                                <br><img src="image/10.png", width="500", height="300"><br>
+                                但是實際上我們不會拿整個資料集去做完整的一次更新參數，會把大資料集切分成多個batch，
+                                每次要更新一次參數的時候，就拿一個batch去更新，稱為一次update，直到所有的batch都拿來更新為止。
+                                而當我們把整個資料集，也就是所有batch都拿去更新完成之後，就稱為一次epoch，一次訓練可以有多次epoch。
+                                <br><img src="image/11.png", width="500", height="300"><br>
+                                從圖片中的例子可以看出，當batch size越大的時候，參數updates的次數就越少，但過高的updates次數有可能導致overfitting的問題發生。
+                                <br><img src="image/12.png", width="500", height="300"><br>
+                                <br><img src="image/13.png", width="500", height="300"><br>
+                                接下來我們可以來看要怎麼把ReLU轉換成Hard Sigmoid，其實就是用兩個ReLU其中一個放置顛倒就可以在當x越大時，y趨近於1。
+                                
+                                <h2>
+                                    5️⃣Deep(Hidden Layer)
+                                </h2>
+                                <br><img src="image/14.png", width="500", height="300"><br>
+                                Neuron的意思是每一個activation function，Neural Network就是很多個Neuron組成的。<br>
+                                Hidden layer指的是在一層裡面有許多的Neuron組成，很多層的Hidden Layer就可以組成所謂的Deep Learning。
+                                <br><img src="image/15.png", width="500", height="300"><br>
+                                但為什麼有時候太Deep的模型不好，就是因為容易造成overfitting。Overfitting的意思就是在training data的表現很好，但是在testing data的表現上很差。
+                                這是所有AI訓練人員所避免的事情。
+                                <h2>
+                                    6️⃣Reference    
+                                </h2>
+                                Reference:https://www.youtube.com/watch?v=bHcJCp2Fyxs&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=2
+                        </section>
+
+                </div><!-- /.blog-post -->
+
+                <!--<nav class="blog-pagination">
+                    <a class="btn btn-outline-primary" href="#">Older</a>
+                    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+                </nav> -->
+
+            </div>
+
+            <aside class="col-md-4">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="font-italic">About</h4>
+                    <p class="mb-0">師大附中畢、交大資工畢，目前等待考研結果.......</p>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="font-italic">Archives</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">數據分析</a></li>
+                        <li><a href="#">AI</a></li>
+                        <li><a href="#">前端</a></li>
+                        <li><a href="#">資料科學</a></li>
+                        <li><a href="#">商業分析</a></li>
+                        <li><a href="#">日記文</a></li>
+                    </ol>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="font-italic">聯絡我</h4>
+                    <ol class="list-unstyled">
+                        <li><img src="ins_logo.jpg" width="30"; height="30"><a href="https://www.instagram.com/yuzheng_0418/">Instagram</a></li>
+                        <li><img src="FB_logo.jpg" width="30"; height="30"><a href="https://www.facebook.com/lugman.ma/">Facebook</a></li>
+                        <li><img src="github.png" width="30"; height="30"><a href="https://github.com/yuzheng91">github</a></li>
+                    </ol>
+                </div>
+            </aside>
+
+        </div><!-- /.row -->
+
+    </main><!-- /.container -->
+
+    <footer class="blog-footer">
+        <p><a style="color:black;">@2025- All Right Reserved. YuZheng Ma </a></p>
+        <p>
+            <a href="awards.html"style="color:black;">Back to top</a>
+        </p>
+    </footer>
+
+
+
+</body>
+
+</html>
