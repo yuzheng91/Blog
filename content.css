@@ -38,3 +38,72 @@
     background-image: url(101.jpg);
     height: 500px; /* 設置區塊的高度 */
 }
+
+/* ===========================
+🌟 RWD 響應式設計
+=========================== */
+
+/* 📱 手機版：小於768px時 */
+@media (max-width: 768px) {
+    .blog-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .button-container a {
+        margin: 5px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .blog-post-title {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* 📊 平板版：768px ~ 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .button-container a {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .blog-post-title {
+        font-size: 2rem;
+    }
+}
+
+/* 🖥️ 桌機版：大於1024px */
+@media (min-width: 1024px) {
+    .button-container {
+        justify-content: space-between;
+    }
+}
+
+/* 響應式 Logo 樣式 */
+.logo-img {
+    width: 300px;
+    height: auto;
+  }
+  
+  /* 手機版 (小於 768px) 自動縮小 */
+  @media (max-width: 768px) {
+    .logo-img {
+      width: 150px;
+    }
+  }
