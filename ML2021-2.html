@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.72.0">
+    <title>馬玉錚的部落格</title>
+
+    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/blog/">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="ranking.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style>
+        /* stylelint-disable selector-list-comma-newline-after */
+
+        .blog-header {
+            line-height: 1;
+            border-bottom: 1px solid #727272;
+        }
+
+        .blog-header-logo {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: 32px;
+        }
+
+        .blog-header-logo:hover {
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        }
+
+        .display-4 {
+            font-size: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .display-4 {
+                font-size: 3rem;
+            }
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-scroller .nav-link {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            font-size: .875rem;
+        }
+
+        .card-img-right {
+            height: 100%;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .flex-auto {
+            flex: 0 0 auto;
+        }
+
+        .h-250 {
+            height: 250px;
+        }
+
+        @media (min-width: 768px) {
+            .h-md-250 {
+                height: 250px;
+            }
+        }
+
+        /* Pagination */
+        .blog-pagination {
+            margin-bottom: 4rem;
+        }
+
+        .blog-pagination>.btn {
+            border-radius: 2rem;
+        }
+
+        /*
+        * Blog posts
+        */
+        .blog-post {
+            margin-bottom: 4rem;
+        }
+
+        .blog-post-title {
+            margin-bottom: .25rem;
+            font-size: 2.5rem;
+        }
+
+        .blog-post-meta {
+            margin-bottom: 1.25rem;
+            color: #727272;
+        }
+
+        /*
+        * Footer
+        */
+        .blog-footer {
+            padding: 2.5rem 0;
+            color: #52c2d0;
+            text-align: center;
+            background-color: rgb(58, 176, 211);
+            border-top: .05rem solid #e5e5e5;
+        }
+
+        .blog-footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-footer p:last-child {
+            margin-bottom: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <img src="logo.png" width="300" heigh="40">
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-dark" href="home.html">YuZheng's Blog</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+                            viewBox="0 0 24 24">
+                            <title>Search</title>
+                            <circle cx="10.5" cy="10.5" r="7.5" />
+                            <path d="M21 21l-5.2-5.2" />
+                        </svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="button-container">
+            <a class="button" href="about_me.html">關於我</a>
+            <a class="button" href="awards.html">得獎經歷</a>
+            <a class="button" href="#">數據分析</a>
+            <a class="button" href="AI.html">AI人工智慧</a>
+            <a class="button" href="#">商業分析</a>
+            <a class="button" href="#">日記</a>
+        </div>
+
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="content-box" id="box1">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h1>AI人工智慧</h1>烤的Sweet Potato皮究竟能不能吃?
+                    <br>答案是: 可以吃!
+                </p>
+            <style>
+                p{
+                    font-style: italic;
+                }
+            </style>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="content-box" id="box2">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">關於我</strong>
+                            <h3 class="mb-0">第一篇文章</h3>
+                            <div class="mb-1 text-muted">Feb 12, 2025</div>
+                            <p class="card-text mb-auto">關於我的事情</p>
+                            <a href="about_me.html" class="stretched-link">繼續閱讀</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="content-box" id="box2">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">得獎經歷</strong>
+                            <h3 class="mb-0">得獎經歷</h3>
+                            <div class="mb-1 text-muted">Feb 12, 2025</div>
+                            <p class="mb-auto">這是我歷年來的得獎經歷</p>
+                            <a href="awards.html" class="stretched-link">繼續閱讀</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">台大教授李宏毅老師[機器學習概論2021][機器學習任務攻略]</h2>
+                    <p class="blog-post-meta">February 19, 2025 by <a href="about_me.html">Zheng</a></p>
+                        <!-- 簡介段落 -->
+                        <section>
+                            <h2>📘 文章探討</h2>
+                            <p>
+                            1️⃣機器學習訓練步驟與架構<br>
+                            2️⃣Model Bias v.s. Optimization Issue<br>
+                            3️⃣Overfitting是甚麼以及可以怎麼解決<br>
+                            4️⃣Reference<br>
+                            </p>
+                        </section>
+                    
+                        <!-- 主要內容段落 -->
+                        <section>
+                            <h2>1️⃣ 機器學習訓練步驟與架構</h2>
+                            <p>
+                                <img src="image/16.png", width="500", height="400"><br>
+                                Step1:建立一個未知參數&theta;的function<br>
+                                Step2:利用這個function在training data上算Loss<br>
+                                Step3:調整function的參數&theta;以求得最低的loss<br>
+                                <img src="image/17.png", width="500", height="400"><br>
+                                上圖說明在訓練過程中遇到的各種情況應該怎麼處理。<br>
+                                
+                            </p>
+                            <h2>2️⃣Model Bias v.s. Optimization Issue</h2>
+                            <p>
+                                <img src="image/18.png", width="500", height="400"><br>
+                                這張圖說明什麼是Model Bias?當我們在訓練集上的Loss始終很大時，<br>
+                                我們可以往Model Bias的方向思考。Model Bias是說明你設計的Model太小，<br>
+                                不夠包含最佳的Loss Function。此時我們應該要設計一個更大更複雜的Model，<br>
+                                (可以增加更多的features，或用Deep Learning架構)才有機會包含到最佳的Loss Function。<br>
+                                <img src="image/19.png", width="500", height="400"><br>
+                                但是不一定每一次遇到training loss很大的時候都一定是Model Bias造成的，<br>
+                                另一個可能的問題是Optimization Issue。也就是當我們用Gradient Descent去做Optimization時，<br>
+                                模型可能會卡在local minimum，而始終無法到達最佳解，即使此時模型的大小已經夠了。<br>
+                                因此我們就會懷疑到底是哪種問題導致模型在training data上的表現很糟?<br>
+                                <img src="image/20.png", width="500", height="400"><br>
+                                這裡老師舉了一個residual network的例子，畫面中顯示residual network在大的模型表現反而差，<br>
+                                相反的在模型小的表現下卻比較好。由此可推得此時應該是Optimization problem。<br>
+                            </p>
+                            <h2> 3️⃣Overfitting是甚麼以及可以怎麼解決</h2>
+                                <img src="image/21.png", width="500", height="400"><br>
+                                Overfitting就是只在training data上表現很好，但是在testing data上表現奇差。<br>
+                                尤其是在模型巨大的時候，因為複雜的模型可以很好的學習到training data的特徵，<br>
+                                但是容易在遇到沒看過的data上面表現不好。然而，這不足以代表這樣就是overfitting，<br>
+                                有可能是另一個問題，mismatch。<br>
+                                *mismatch是指說訓練資料跟測試資料的分布不同，資料出問題而不是模型出問題。<br>
+                                增加training data是一個很好的方法，但若是取得資料不易，那可以採取data augmentation。<br>
+                                也就是把圖片翻轉、灰階等圖片處理方法來增加data數量。<br>
+                                或是利用我們對資料的理解，給模型添加一些限制，不要那麼flexible。<br>
+                                可以用更少的參數、*共用參數(CNN會講解)、早停、正則化、Dropout。<br>
+                                但是若一不小心給Model過多的限制，可能會導致Model太小而形成Model Bias。<br>
+                                <img src="image/22.png", width="500", height="400"><br>
+                                有一個方法可以增加同時在training/testing data上都表現很好。<br>
+                                就是把training data分成N等分，其中的<sup>N-1</sup>&frasl;<sub>N</sub>當成訓練資料，<br>
+                                再把剩下的一等分當成validation set，這個驗證集可以當作testing data，<br>
+                                在把模型用在testing data之前先在validation set上做測試，<br>
+                                反覆做N次得到最佳的模型，以此來解決Overfitting的問題。<br>
+                            <h2>
+                                4️⃣Reference:
+                            </h2>
+                                <p><li>https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/overfit-v6.pdf</li>
+                                <li>https://www.youtube.com/watch?v=WeHM2xpYQpw&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=3</li> </p>   
+                        </section>
+
+                </div><!-- /.blog-post -->
+
+                <!--<nav class="blog-pagination">
+                    <a class="btn btn-outline-primary" href="#">Older</a>
+                    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+                </nav> -->
+
+            </div>
+
+            <aside class="col-md-4">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="font-italic">About</h4>
+                    <p class="mb-0">師大附中畢、交大資工畢，目前等待考研結果.......</p>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="font-italic">Archives</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">數據分析</a></li>
+                        <li><a href="#">AI</a></li>
+                        <li><a href="#">前端</a></li>
+                        <li><a href="#">資料科學</a></li>
+                        <li><a href="#">商業分析</a></li>
+                        <li><a href="#">日記文</a></li>
+                    </ol>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="font-italic">聯絡我</h4>
+                    <ol class="list-unstyled">
+                        <li><img src="ins_logo.jpg" width="30"; height="30"><a href="https://www.instagram.com/yuzheng_0418/">Instagram</a></li>
+                        <li><img src="FB_logo.jpg" width="30"; height="30"><a href="https://www.facebook.com/lugman.ma/">Facebook</a></li>
+                        <li><img src="github.png" width="30"; height="30"><a href="https://github.com/yuzheng91">github</a></li>
+                    </ol>
+                </div>
+            </aside>
+
+        </div><!-- /.row -->
+
+    </main><!-- /.container -->
+
+    <footer class="blog-footer">
+        <p><a style="color:black;">@2025- All Right Reserved. YuZheng Ma </a></p>
+        <p>
+            <a href="awards.html"style="color:black;">Back to top</a>
+        </p>
+    </footer>
+
+
+
+</body>
+
+</html>
