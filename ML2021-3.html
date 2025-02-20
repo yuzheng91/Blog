@@ -254,60 +254,92 @@
         </div>
     </div>
 
-    <div class="container my-4">
-        <h2 class="mb-4 text-center">📚 我的文章列表</h2>
-        <div class="row">
-      
-          <!-- 第一篇文章卡片 -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">✨ 台大教授李宏毅老師[機器學習概論2021][機器學習基本概念]</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Feb 16, 2025</h6>
-                <p class="card-text">究竟機器學習的基本概念是甚麼...</p>
-                <a href="ML2021-1.html" class="btn btn-primary">繼續閱讀</a>
-              </div>
-            </div>
-          </div>
-      
-          <!-- 第二篇文章卡片 -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">✨ 台大教授李宏毅老師[機器學習概論2021][機器學習任務攻略]</h5>
-                <h6 class="card-subtitle mb-2 text-muted">2025-02-19</h6>
-                <p class="card-text">探討訓練模型的小tips，以及遇到overfitting該如何處理...</p>
-                <a href="ML2021-2.html" class="btn btn-primary">繼續閱讀</a>
-              </div>
-            </div>
-          </div>
-      
-          <!-- 第三篇文章卡片 -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">✨ 台大教授李宏毅老師[機器學習概論2021][類神經網路訓練不起來怎麼辦 (一)： 局部最小值 (local minima) 與鞍點 (saddle point)]</h5>
-                <h6 class="card-subtitle mb-2 text-muted">2025-02-20</h6>
-                <p class="card-text">神經網路訓練不起來怎麼辦...</p>
-                <a href="ML2021-3.html" class="btn btn-primary">繼續閱讀</a>
-              </div>
-            </div>
-          </div>
-      
-        </div>
-      </div>
     <main class="container">
         <div class="row">
             <div class="col-md-8">
 
                 <div class="blog-post">
-                    <h2 class="blog-post-title">AI人工智慧</h2>
-                    <p class="blog-post-meta">February 16, 2025 by <a href="about_me.html">Zheng</a></p>
-
-                    <p>AI在我第一次接觸到的時候是2016年AlphaGo橫空出世的時候，當時身為一個國中生的我，
-                        覺得竟然有一個這麼厲害的AI能夠把圍棋界最強的棋王打敗，重點是還沒有任何還手之力，
-                        恐怖如斯卻又相當的迷人，從此踏上這條探尋AI的不歸路~~
-                    </p>
+                    <h2 class="blog-post-title">台大教授李宏毅老師[機器學習概論2021][類神經網路訓練不起來怎麼辦 (一)： 局部最小值 (local minima) 與鞍點 (saddle point)]</h2>
+                    <p class="blog-post-meta">February 20, 2025 by <a href="about_me.html">Zheng</a></p>
+                        <!-- 簡介段落 -->
+                        <section>
+                            <h2>📘 文章探討</h2>
+                            <p>
+                            1️⃣為什麼Optimization會失敗?<br>
+                            2️⃣Local Minima v.s Saddle Point<br>
+                            3️⃣面對Saddle Point如何逃脫?<br>
+                            4️⃣其實local minima的情況非常少見!?<br>
+                            5️⃣Reference
+                            </p>
+                        </section>
+                    
+                        <!-- 主要內容段落 -->
+                        <section>
+                            <h2>1️⃣ 為什麼Optimization會失敗?</h2>
+                            <p>
+                                由前一個文章的探討，我們知道若類神經網路train不起來有很多種因素，<br>
+                                端看是在training data的loss過高還是在testing data的loss過高。<br>
+                                若在training data的loss過高，我們還可以細分成是optimization的策略不好，<br>
+                                還是模型的大小不夠大。前一篇文章探討了模型大小(model bias)所造成的影響，<br>
+                                本文改探討optimization的策略問題。<br>
+                                <img src="image/23.png", width="500", height="400"><br>
+                                看到上面這張圖，當我們使用gradient descent但loss依然很高時，<br>
+                                通常會去推論是不是到了critical point了。<br>
+                                其中critical point有兩種，第一種是local minima，第二種則是saddle point。<br>
+                                此時有沒有辦法去辨別到底我們是處在local minima還是saddle point?<br>
+                                答案是可以的!那為什麼我們會想要知道到底是在哪一種critical point?<br>
+                                原因是如果再critical point，那就真的無路可走，要再重新選擇地點進行optimization。<br>
+                                但如果是在saddle point，那我們依然有路可以逃離。<br>
+                                接下來就來探討到底要怎麼去分辨這兩種的差異!
+                            </p>
+                            <h2>2️⃣Local Minima v.s Saddle Point</h2>
+                            <p>
+                                <img src="image/24.png", width="500", height="400"><br>
+                                首先我們想要知道藍色&theta;的loss function的形狀長怎樣?<br>
+                                其中藍色&theta的loss function可以用Taylor's approximation近似成圖片中的function。<br>
+                                又因為身處在critical point，所以綠色的部分其中的gradient為0，就只要專注在紅色的部分就好。<br>
+                                <img src="image/25.png", width="500", height="400"><br>
+                                我們把(&theta;-&theta;<sup>'</sup>)設為v。<br>
+                                1. 若紅色部分大於零，代表周圍的任何&theta;所在的loss都大於該點，因此處在local minima。<br>
+                                2. 若紅色部分小於零，代表周圍的任何&theta;所在的loss都小於該點，因此處在local maxima。<br>
+                                3. 若對於有些v來說是大於零，但對於其他某些v來說是小於零，則可以推論為saddle point。<br>
+                                但是要怎麼判斷紅色部分究竟大於零還是小於零，考慮線性代數正定矩陣性質。<br>
+                                對於任何v，若Hessian matrix H的所有eigenvalue都大於零，則為正定矩陣，<br>
+                                故對所有的v來說紅色部分必大於零。<br>
+                                相反的，若對於任何v，Hessian matrix H的所有eigenvalue都小於零，則為負定矩陣，<br>
+                                對於所有的v來說紅色部分都必小於零。<br>
+                                
+                            </p>
+                            <h2> 3️⃣面對Saddle Point如何逃脫?</h2>
+                                <img src="image/26.png", width="500", height="400"><br>
+                                剛剛提到當我們遇到saddle point的時候，其實有機會逃脫gradient等於零的險境。<br>
+                                但是具體要怎麼逃脫呢?因為gradient=0，所以只能從H找到線索。<br>
+                                首先我們取H的一個eigenvector u，帶入v的部分，可得u<sup>T</sup>Hu。<br>
+                                又u<sup>T</sup>Hu=&lambda;|u|<sup>2</sup>，因為u是eigenvector。<br>
+                                此時我們只要去判定到底&lambda;是正是負。舉&lambda;小於零的例子，<br>
+                                因為&lambda;小於零的關係，可知L(&theta;)小於L(&theta;<sup>'</sup>)，處在loss大的地方。
+                                則因為&theta;-&theta;<sup>'</sup>=u，又可得&theta;=&theta;<sup>'</sup>+u。<br>
+                                故我們只要把原本&theta;<sup>'</sup>沿著eigenvector u的方向加上這個向量，<br>
+                                就可以得到一個比較小的loss。<br>
+                                但現實世界因為要計算H的特徵值跟特徵向量過於複雜，計算量很龐大，<br>
+                                所以我們在實作的時候不會真的用這個方法來逃離saddle point。<br>
+                            
+                            <h2>
+                                4️⃣其實local minima的情況非常少見!?
+                            </h2>    
+                                <img src="image/27.png", width="500", height="400"><br>
+                                有一種可能，我們在二維世界看到的local minima，再三維甚至更高維度的地方，<br>
+                                那個所謂的local minima會不會只是saddle point!<br>
+                                <img src="image/28.png", width="500", height="400"><br>
+                                實驗也證實其實local minima並不是那麼的常見!<br>
+                                下一篇文章老師會介紹遇到saddle point時我們可以怎麼解決。
+                            <h2>
+                                5️⃣Reference
+                            </h2>
+                                Reference:
+                                <li>https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/small-gradient-v7.pdf</li>
+                                <li>https://www.youtube.com/watch?v=QW6uINn7uGk&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=4</li>
+                        </section>
 
                 </div><!-- /.blog-post -->
 
@@ -354,11 +386,3 @@
         <p><a style="color:black;">@2025- All Right Reserved. YuZheng Ma </a></p>
         <p>
             <a href="awards.html"style="color:black;">Back to top</a>
-        </p>
-    </footer>
-
-
-
-</body>
-
-</html>
